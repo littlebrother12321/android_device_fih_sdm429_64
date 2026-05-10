@@ -1,0 +1,34 @@
+##Import RHD RC
+#For Fingerprint
+import /vendor/etc/init/hw/init.fingerprint.${ro.boot.fp}.rc
+import /vendor/etc/init/hw/init.audio.smartamp.rc
+import /vendor/etc/init/hw/init.audio.fqc.rc
+import /vendor/etc/init/hw/init.nfc.sec.rc
+
+# SW4-HL-Display-ImplementCECTCABC-00+_20160126
+import /vendor/etc/init/hw/init.lcm.rc
+
+#For fih modem ssr and ramdump meahanism porting
+import /vendor/etc/init/hw/init.fih.ramdump.rc
+
+# HCLai add for ALT
+import /vendor/etc/init/hw/init.alt.rc
+
+#Jason add for elabel
+import /vendor/etc/init/hw/init.fih.elabel.rc
+
+import /vendor/etc/init/hw/init.poweroff_charging.rc
+
+#SW4 Roger add for chromatix
+import /vendor/etc/init/hw/init.RHD.chromatix.rc
+
+#CP add Samsung NFC hidl rc
+import /vendor/etc/init/hw/vendor.sec.hardware.nfc@1.1-service.rc
+
+on early-boot
+  setprop debug.ftm.mixerpath /vendor/etc/mixer_paths_rhd.xml
+#Fih add Change Voice path to audio path
+  setprop vendor.voice.path.for.pcm.voip false
+
+# RSU Kinibi functions
+import /vendor/etc/init/hw/init.trustonic.rc

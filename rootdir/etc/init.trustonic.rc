@@ -1,0 +1,62 @@
+service teeMcDaemon /vendor/bin/mcDriverDaemon
+    user system
+    group system
+    priority -20
+
+service rsuDaemon /vendor/bin/rsudaemon
+    user system
+    group system
+    priority -20
+
+# Rollback trustonic rsutoken when boot with root permission
+service execRsuTokenbackup-sh /vendor/bin/init.trustonic.rsutokenbackup.sh
+    user root
+    group root
+    oneshot
+
+service tbaseLoaderDaemon /vendor/bin/tbaseLoader tbase
+    user system
+    group system 
+    oneshot
+
+on property:vendor.trustonic.mobicore=true
+    chown system system /dev/mobicore-user
+    chmod 0666 /dev/mobicore-user
+    start rsuDaemon
+
+on post-fs-data
+    mkdir /data/vendor/mcRegistry system system
+    chmod 0755 /data/vendor/mcRegistry
+    chown system system /data/vendor/mcRegistry
+    mkdir /data/vendor/mcRegistry/TbStorage
+    chmod 0755 /data/vendor/mcRegistry/TbStorage
+    chown system system /data/vendor/mcRegistry/TbStorage
+    symlink /vendor/app/mcRegistry/07010000000000000000000000000000.tlbin /data/vendor/mcRegistry/07010000000000000000000000000000.tlbin
+    symlink /vendor/app/mcRegistry/08881000000000000000000000000000.tlbin /data/vendor/mcRegistry/08881000000000000000000000000000.tlbin
+    symlink /vendor/app/mcRegistry/08881000000000000000000000000000_CKT_RHD_PRODUCT.tlbin /data/vendor/mcRegistry/08881000000000000000000000000000_CKT_RHD_PRODUCT.tlbin
+    symlink /vendor/app/mcRegistry/08881000000000000000000000000000_CKT_EAG_PRODUCT.tlbin /data/vendor/mcRegistry/08881000000000000000000000000000_CKT_EAG_PRODUCT.tlbin
+    symlink /vendor/app/mcRegistry/08882000000000000000000000000000_ATT_EAG_PRODUCT.tlbin /data/vendor/mcRegistry/08882000000000000000000000000000_ATT_EAG_PRODUCT.tlbin
+    symlink /vendor/app/mcRegistry/07050501000000000000000000000020.tlbin /data/vendor/mcRegistry/07050501000000000000000000000020.tlbin
+    chmod 0666 /data/vendor/mcRegistry/07010000000000000000000000000000.tlbin
+    chmod 0666 /data/vendor/mcRegistry/08881000000000000000000000000000.tlbin
+    chmod 0666 /data/vendor/mcRegistry/08881000000000000000000000000000_CKT_RHD_PRODUCT.tlbin
+    chmod 0666 /data/vendor/mcRegistry/08881000000000000000000000000000_CKT_EAG_PRODUCT.tlbin
+    chmod 0666 /data/vendor/mcRegistry/08882000000000000000000000000000_ATT_EAG_PRODUCT.tlbin
+    chmod 0666 /data/vendor/mcRegistry/07050501000000000000000000000020.tlbin
+    chown system system /data/vendor/mcRegistry/07010000000000000000000000000000.tlbin
+    chown system system /data/vendor/mcRegistry/08881000000000000000000000000000.tlbin
+    chown system system /data/vendor/mcRegistry/08881000000000000000000000000000_CKT_RHD_PRODUCT.tlbin
+    chown system system /data/vendor/mcRegistry/08881000000000000000000000000000_CKT_EAG_PRODUCT.tlbin
+    chown system system /data/vendor/mcRegistry/08882000000000000000000000000000_ATT_EAG_PRODUCT.tlbin
+    chown system system /data/vendor/mcRegistry/07050501000000000000000000000020.tlbin
+    copy /mnt/vendor/persist/00000000.authtokcont /data/vendor/mcRegistry/00000000.authtokcont
+    copy /mnt/vendor/persist/00000000.authtokcont /data/vendor/mcRegistry/00000000.authtokcont.backup
+    chmod 0666 /data/vendor/mcRegistry/00000000.authtokcont.backup
+    chmod 0666 /data/vendor/mcRegistry/00000000.authtokcont
+    chown system system /data/vendor/mcRegistry/00000000.authtokcont.backup
+    chown system system /data/vendor/mcRegistry/00000000.authtokcont
+    start tbaseLoaderDaemon
+    chmod 0660 /dev/mobicore
+    chown system system /dev/mobicore
+    start teeMcDaemon
+

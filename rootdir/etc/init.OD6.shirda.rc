@@ -1,0 +1,3 @@
+on boot
+				chmod 666 /dev/msm_shirda
+				chmod 666 /dev/ttyMSM1

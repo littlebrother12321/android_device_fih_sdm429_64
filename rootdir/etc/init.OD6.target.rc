@@ -1,0 +1,31 @@
+##Import OD6 RC
+import /vendor/etc/init/hw/init.audio.fqc.rc
+
+# SW4-HL-Display-ImplementCECTCABC-00+_20160126
+import /vendor/etc/init/hw/init.lcm.rc
+
+#For fih modem ssr and ramdump meahanism porting
+import /vendor/etc/init/hw/init.fih.ramdump.rc
+
+# HCLai add for ALT
+import /vendor/etc/init/hw/init.alt.rc
+
+#Jason add for elabel
+import /vendor/etc/init/hw/init.fih.elabel.rc
+
+import /vendor/etc/init/hw/init.poweroff_charging.rc
+
+on early-boot
+  setprop debug.ftm.mixerpath /vendor/etc/mixer_paths_od6.xml
+
+# RSU Kinibi functions
+import /vendor/etc/init/hw/init.trustonic.rc
+
+# Win, add for sharp irda
+import /vendor/etc/init/hw/init.OD6.shirda.rc
+
+# fihtdc, DanielYJ, 20181211, add for FQC LED test
+import /vendor/etc/init/hw/init.OD6.led.rc
+
+# Win, add for rtc
+import /vendor/etc/init/hw/init.OD6.rtc.rc

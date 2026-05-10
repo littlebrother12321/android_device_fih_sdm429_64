@@ -1,0 +1,419 @@
+//
+// SPDX-FileCopyrightText: The LineageOS Project
+// SPDX-License-Identifier: Apache-2.0
+//
+
+// Init scripts
+sh_binary {
+    name: "dmic1_to_headset_recv_off.sh",
+    src: "bin/dmic1_to_headset_recv_off.sh",
+    vendor: true,
+}
+
+sh_binary {
+    name: "dmic1_to_headset_recv_on.sh",
+    src: "bin/dmic1_to_headset_recv_on.sh",
+    vendor: true,
+}
+
+sh_binary {
+    name: "dmic2_to_headset_recv_off.sh",
+    src: "bin/dmic2_to_headset_recv_off.sh",
+    vendor: true,
+}
+
+sh_binary {
+    name: "dmic2_to_headset_recv_on.sh",
+    src: "bin/dmic2_to_headset_recv_on.sh",
+    vendor: true,
+}
+
+sh_binary {
+    name: "fqcaudioloopback.sh",
+    src: "bin/fqcaudioloopback.sh",
+    vendor: true,
+}
+
+sh_binary {
+    name: "headset_mic_to_headset_recv_off.sh",
+    src: "bin/headset_mic_to_headset_recv_off.sh",
+    vendor: true,
+}
+
+sh_binary {
+    name: "headset_mic_to_headset_recv_on.sh",
+    src: "bin/headset_mic_to_headset_recv_on.sh",
+    vendor: true,
+}
+
+sh_binary {
+    name: "init.class_main.sh",
+    src: "bin/init.class_main.sh",
+    vendor: true,
+}
+
+sh_binary {
+    name: "init.crda.sh",
+    src: "bin/init.crda.sh",
+    vendor: true,
+}
+
+sh_binary {
+    name: "init.mdm.sh",
+    src: "bin/init.mdm.sh",
+    vendor: true,
+}
+
+sh_binary {
+    name: "init.qcom.class_core.sh",
+    src: "bin/init.qcom.class_core.sh",
+    vendor: true,
+}
+
+sh_binary {
+    name: "init.qcom.coex.sh",
+    src: "bin/init.qcom.coex.sh",
+    vendor: true,
+}
+
+sh_binary {
+    name: "init.qcom.crashdata.sh",
+    src: "bin/init.qcom.crashdata.sh",
+    vendor: true,
+}
+
+sh_binary {
+    name: "init.qcom.early_boot.sh",
+    src: "bin/init.qcom.early_boot.sh",
+    vendor: true,
+}
+
+sh_binary {
+    name: "init.qcom.efs.sync.sh",
+    src: "bin/init.qcom.efs.sync.sh",
+    vendor: true,
+}
+
+sh_binary {
+    name: "init.qcom.post_boot.sh",
+    src: "bin/init.qcom.post_boot.sh",
+    vendor: true,
+}
+
+sh_binary {
+    name: "init.qcom.sdio.sh",
+    src: "bin/init.qcom.sdio.sh",
+    vendor: true,
+}
+
+sh_binary {
+    name: "init.qcom.sensors.sh",
+    src: "bin/init.qcom.sensors.sh",
+    vendor: true,
+}
+
+sh_binary {
+    name: "init.qcom.sh",
+    src: "bin/init.qcom.sh",
+    vendor: true,
+}
+
+sh_binary {
+    name: "init.qcom.syspart_fixup.sh",
+    src: "bin/init.qcom.syspart_fixup.sh",
+    vendor: true,
+}
+
+sh_binary {
+    name: "init.qcom.usb.sh",
+    src: "bin/init.qcom.usb.sh",
+    vendor: true,
+}
+
+sh_binary {
+    name: "init.qcom.wifi.sh",
+    src: "bin/init.qcom.wifi.sh",
+    vendor: true,
+}
+
+sh_binary {
+    name: "init.qti.fm.sh",
+    src: "bin/init.qti.fm.sh",
+    vendor: true,
+}
+
+sh_binary {
+    name: "init.qti.ims.sh",
+    src: "bin/init.qti.ims.sh",
+    vendor: true,
+}
+
+sh_binary {
+    name: "init.qti.qseecomd.sh",
+    src: "bin/init.qti.qseecomd.sh",
+    vendor: true,
+}
+
+sh_binary {
+    name: "init.trustonic.rsutokenbackup.sh",
+    src: "bin/init.trustonic.rsutokenbackup.sh",
+    vendor: true,
+}
+
+sh_binary {
+    name: "qca6234-service.sh",
+    src: "bin/qca6234-service.sh",
+    vendor: true,
+}
+
+sh_binary {
+    name: "txpowerwifi.sh",
+    src: "bin/txpowerwifi.sh",
+    vendor: true,
+}
+
+// Init configuration files
+prebuilt_etc {
+    name: "init.EAG.nfc.rc",
+    src: "etc/init.EAG.nfc.rc",
+    sub_dir: "init/hw",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "init.EAG.target.rc",
+    src: "etc/init.EAG.target.rc",
+    sub_dir: "init/hw",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "init.LMS.target.rc",
+    src: "etc/init.LMS.target.rc",
+    sub_dir: "init/hw",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "init.OD6.rtc.rc",
+    src: "etc/init.OD6.rtc.rc",
+    sub_dir: "init/hw",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "init.OD6.shirda.rc",
+    src: "etc/init.OD6.shirda.rc",
+    sub_dir: "init/hw",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "init.OD6.target.rc",
+    src: "etc/init.OD6.target.rc",
+    sub_dir: "init/hw",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "init.RHD.chromatix.rc",
+    src: "etc/init.RHD.chromatix.rc",
+    sub_dir: "init/hw",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "init.RHD.target.rc",
+    src: "etc/init.RHD.target.rc",
+    sub_dir: "init/hw",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "init.TRD.target.rc",
+    src: "etc/init.TRD.target.rc",
+    sub_dir: "init/hw",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "init.audio.fqc.rc",
+    src: "etc/init.audio.fqc.rc",
+    sub_dir: "init/hw",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "init.audio.smartamp.lms.rc",
+    src: "etc/init.audio.smartamp.lms.rc",
+    sub_dir: "init/hw",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "init.audio.smartamp.rc",
+    src: "etc/init.audio.smartamp.rc",
+    sub_dir: "init/hw",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "init.fih.elabel.rc",
+    src: "etc/init.fih.elabel.rc",
+    sub_dir: "init/hw",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "init.fih.ramdump.rc",
+    src: "etc/init.fih.ramdump.rc",
+    sub_dir: "init/hw",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "init.lcm.rc",
+    src: "etc/init.lcm.rc",
+    sub_dir: "init/hw",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "init.msm.usb.configfs.rc",
+    src: "etc/init.msm.usb.configfs.rc",
+    sub_dir: "init/hw",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "init.nfc.sec.rc",
+    src: "etc/init.nfc.sec.rc",
+    sub_dir: "init/hw",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "init.poweroff_charging.rc",
+    src: "etc/init.poweroff_charging.rc",
+    sub_dir: "init/hw",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "init.qcom.battery.rc",
+    src: "etc/init.qcom.battery.rc",
+    sub_dir: "init/hw",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "init.qcom.emmc.rc",
+    src: "etc/init.qcom.emmc.rc",
+    sub_dir: "init/hw",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "init.qcom.factory.rc",
+    src: "etc/init.qcom.factory.rc",
+    sub_dir: "init/hw",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "init.qcom.fs.rc",
+    src: "etc/init.qcom.fs.rc",
+    sub_dir: "init/hw",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "init.qcom.lcm.rc",
+    src: "etc/init.qcom.lcm.rc",
+    sub_dir: "init/hw",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "init.qcom.rc",
+    src: "etc/init.qcom.rc",
+    sub_dir: "init/hw",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "init.qcom.sensor.rc",
+    src: "etc/init.qcom.sensor.rc",
+    sub_dir: "init/hw",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "init.qcom.target.rc",
+    src: "etc/init.qcom.target.rc",
+    sub_dir: "init/hw",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "init.qcom.tp.rc",
+    src: "etc/init.qcom.tp.rc",
+    sub_dir: "init/hw",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "init.qcom.usb.rc",
+    src: "etc/init.qcom.usb.rc",
+    sub_dir: "init/hw",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "init.qcom.wifi.rc",
+    src: "etc/init.qcom.wifi.rc",
+    sub_dir: "init/hw",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "init.sku.rc",
+    src: "etc/init.sku.rc",
+    sub_dir: "init/hw",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "init.target.rc",
+    src: "etc/init.target.rc",
+    sub_dir: "init/hw",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "init.trustonic.rc",
+    src: "etc/init.trustonic.rc",
+    sub_dir: "init/hw",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "vendor.nxp.hardware.nfc@1.1-service.rc",
+    src: "etc/vendor.nxp.hardware.nfc@1.1-service.rc",
+    sub_dir: "init/hw",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "vendor.sec.hardware.nfc@1.1-service.rc",
+    src: "etc/vendor.sec.hardware.nfc@1.1-service.rc",
+    sub_dir: "init/hw",
+    vendor: true,
+}
+
+// fstab
+prebuilt_etc {
+    name: "fstab.qcom",
+    src: "etc/fstab.qcom",
+    vendor: true,
+}

@@ -1,0 +1,28 @@
+##Import OD6 RC
+import /vendor/etc/init/hw/init.audio.fqc.rc
+import /vendor/etc/init/hw/init.audio.smartamp.lms.rc
+
+# SW4-HL-Display-ImplementCECTCABC-00+_20160126
+import /vendor/etc/init/hw/init.lcm.rc
+
+#For fih modem ssr and ramdump meahanism porting
+import /vendor/etc/init/hw/init.fih.ramdump.rc
+
+# HCLai add for ALT
+import /vendor/etc/init/hw/init.alt.rc
+
+#Jason add for elabel
+import /vendor/etc/init/hw/init.fih.elabel.rc
+
+import /vendor/etc/init/hw/init.poweroff_charging.rc
+
+#CP add Samsung NFC hidl rc
+import /vendor/etc/init/hw/init.nfc.sec.rc
+import /vendor/etc/init/hw/vendor.sec.hardware.nfc@1.1-service.rc
+
+on early-boot
+  setprop debug.ftm.mixerpath /vendor/etc/mixer_paths_lms.xml
+
+# RSU Kinibi functions
+import /vendor/etc/init/hw/init.trustonic.rc
+

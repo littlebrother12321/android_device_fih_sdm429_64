@@ -1,0 +1,16 @@
+# Radio
+persist.radio.sar.enabled=7
+persist.radio.wfc_count=3
+
+# Wi-Fi
+ro.wifi.channels=
+
+# Miscellaneous
+dalvik.vm.stack-trace-dir=/data/anr
+net.bt.name=Android
+persist.dbg.eab_service_bind=true
+persist.ipme.supported=0
+persist.rcs.supported=1
+persist.sys.dalvik.vm.lib.2=libart.so
+persist.sys.pftrace.enabled=true
+

@@ -1,0 +1,35 @@
+##Import EAG RC
+import /vendor/etc/init/hw/init.EAG.nfc.rc
+import /vendor/etc/init/hw/init.audio.smartamp.rc
+import /vendor/etc/init/hw/init.audio.fqc.rc
+
+# SW4-HL-Display-ImplementCECTCABC-00+_20160126
+import /vendor/etc/init/hw/init.lcm.rc
+
+#For fih modem ssr and ramdump meahanism porting
+import /vendor/etc/init/hw/init.fih.ramdump.rc
+
+# HCLai add for ALT
+import /vendor/etc/init/hw/init.alt.rc
+
+#Jason add for elabel
+import /vendor/etc/init/hw/init.fih.elabel.rc
+
+import /vendor/etc/init/hw/init.poweroff_charging.rc
+
+on early-boot
+  setprop debug.ftm.mixerpath /vendor/etc/mixer_paths_eag.xml
+#CPLai disable uicc se for EAG
+  setprop persist.vendor.radio.uicc_se_enabled false
+#Fih add Change Voice path to audio path
+  setprop vendor.voice.path.for.pcm.voip false
+
+#DerekCWWu, front flash
+  setprop persist.camera.ffcolor.th 3000
+  setprop persist.camera.ffcolor.th2 5000
+  setprop persist.camera.ffcolor ffeedd
+  setprop persist.camera.ffcolor.lev2 fffaf4
+  setprop persist.camera.ffcolor.lev3 ecf5ff
+
+# RSU Kinibi functions
+import /vendor/etc/init/hw/init.trustonic.rc

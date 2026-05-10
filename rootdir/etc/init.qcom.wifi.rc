@@ -1,0 +1,41 @@
+on boot
+   chown system system /sys/class/rtc/rtc0/device/clear_alarm
+   setprop vendor.wbg.bt.service false
+   setprop vendor.wbg.bt btstop
+
+on property:vendor.wifi.mtu=true
+    write /sys/class/net/wlan0/mtu 1440
+
+on property:vendor.wifi.mtu=false
+    write /sys/class/net/wlan0/mtu 1500
+
+#CP test begin
+service txpowertest_wifi /vendor/bin/sh /vendor/bin/txpowerwifi.sh
+    user root
+    oneshot
+    disabled
+
+on property:vendor.wifi.txpowertest=true
+    start txpowertest_wifi
+    setprop persist.vendor.check.txpowertest true
+#CP test end
+
+# WBGTestTool Wi-Fi test
+service wbgtesttool_wifi /vendor/bin/sh /vendor/etc/wbg_wifi.sh
+    user root
+    oneshot
+    disabled
+
+on property:vendor.wbg.wifi=start
+    start wbgtesttool_wifi
+
+# TommyYSHung add for WBGTestTool BT test
+service btstart_sh /vendor/bin/sh /vendor/etc/wbg_bt.sh
+    user root
+    oneshot
+    disabled
+
+# TommyYSHung add for WBGTestTool BT test
+#on property:vendor.wbg.bt=btstart
+on property:vendor.wbg.bt.service=true
+    start btstart_sh
