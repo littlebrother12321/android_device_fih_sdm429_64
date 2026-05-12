@@ -8,8 +8,8 @@ DEVICE_PATH := device/qualcomm/fih_sdm429_64
 # A/B
 AB_OTA_UPDATER := true
 AB_OTA_PARTITIONS += \
-	boot
-	system
+	boot \
+	system \
 	vendor
 BOARD_USES_RECOVERY_AS_BOOT := true
 
